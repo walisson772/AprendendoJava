@@ -23,3 +23,4 @@ public class exercicio001 {
         System.out.printf("Ponto decimal dos EUA: %.3f%n", medida);
     }
 }
+
