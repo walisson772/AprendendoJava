@@ -1,6 +1,8 @@
+package condicionais;
+
 import java.util.Scanner;
 
-public class exercicio003 {
+public class exercicio001 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num;
