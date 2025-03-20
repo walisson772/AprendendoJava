@@ -1,9 +1,20 @@
+import java.util.Locale;
+import java.util.Scanner;
+import aplication.Imc;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("linha 3");
-        System.out.println("linha 4");
-        System.out.println("linha 5");
-        System.out.println("linha 6");
-        System.out.println("linha 7");
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite sua altura em metros:");
+        double altura = sc.nextFloat();
+
+        System.out.println("Digite seu peso:");
+        double peso = sc.nextFloat();
+
+        String result = Imc.calcularImc(altura, peso);
+        System.out.printf(result);
+
+        sc.close();
     }
 }
