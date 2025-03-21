@@ -1,4 +1,4 @@
-package aplication;
+package exemploPoo01.aplication;
 
 public class Imc {
     public static String calcularImc(double altura, double peso) {
