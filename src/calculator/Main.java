@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int opcoes;
+        int opcao;
         Scanner sc = new Scanner(System.in);
         while (true){
             Calculator calcula = new Calculator();
             calcula.opcoes();
-            opcoes = sc.nextInt();
-            if (opcoes == 5) {
+            opcao = sc.nextInt();
+            if (opcao == 5) {
+                System.out.println("Encerrando a calculadora");
                 break;
             }
             System.out.println("Digite um numero:");
@@ -18,7 +19,7 @@ public class Main {
             System.out.println("Digite outro numero:");
             calcula.num2 = sc.nextDouble();
 
-            calcula.condicoes(opcoes);
+            calcula.condicoes(opcao);
         }
         sc.close();
     }
