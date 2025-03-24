@@ -10,13 +10,27 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         
         Product product = new Product();
-        System.out.print("Adicione um produto:");
+        System.out.println("Adicione um produto");
         System.out.print("Nome:");
         product.name = sc.nextLine();
+
         System.out.print("Preco:");
         product.preco = sc.nextDouble();
+
         System.out.print("Quantidade:");
         product.quantidade = sc.nextInt();
+        System.out.println("Produto: " + product);
+
+        System.out.println();
+        System.out.print("Entre com o numero de produtos para ser adionado no estoque:");
+        int quantity = sc.nextInt();
+        product.addProdutos(quantity);
+        System.out.println("Produtos atualizados: " + product);
+
+        System.out.print("Entre com o numero de produtos para serem removidos do estoque:");
+        quantity = sc.nextInt();
+        product.removeProdutos(quantity);
+        System.out.println("Produtos atualizados: " + product);
         sc.close();
 
     }
