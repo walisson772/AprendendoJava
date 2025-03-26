@@ -1,9 +1,9 @@
 package exemploPoo02.entities;
 
 public class Product {
-    public String name;
-    public double preco;
-    public int quantidade;
+    private String name;
+    private double preco;
+    private int quantidade;
 
     public Product(String name, double preco, int quantidade) {
         this.name = name;
@@ -14,6 +14,28 @@ public class Product {
     public Product(String name, double preco) {
         this.name = name;
         this.preco = preco;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+
+
+    public int getQuantidade() {
+        return quantidade;
     }
 
     public double valorTotalNoEstoque() {
