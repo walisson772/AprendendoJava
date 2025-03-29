@@ -34,7 +34,6 @@ public class Program {
                     System.out.println("-----------------------------");
                     break;
                 case 3:
-
                     System.out.println("-----------------------------");
                     System.out.println("Tarefas Pendentes:");
                     listTarefas(list);
