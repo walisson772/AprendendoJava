@@ -14,12 +14,12 @@ public class Loja {
         List<ControleDeEstoque> list = new ArrayList<>();
         ControleDeEstoque estoc = new ControleDeEstoque();
         Scanner sc = new Scanner(System.in);
-        int escolha;
+
 
         while (true){
             estoc.opcoes();
             System.out.print("O que deseja fazer: ");
-            escolha = sc.nextInt();
+            int escolha = sc.nextInt();
             switch (escolha){
                 case 1:
                     System.out.print("Digite o codigo do produto: ");
@@ -36,11 +36,11 @@ public class Loja {
                         System.out.print("Valor cobrado por cada unidade: ");
                         double preco = sc.nextDouble();
                         estoc.setValorUnidade(preco);
-                        System.out.println(estoc.getValorUnidade());
                         System.out.println("Produto: "+produto+" foi adcionado com sucesso.");
                         Double valorTotal = quantidade * preco;
                         list.add(new ControleDeEstoque(codigo, quantidade, produto, valorTotal));
                     }
+
                     else{
                         System.out.println("Já tem um produto cadastrado com esse codigo.");
                     }
@@ -54,7 +54,6 @@ public class Loja {
                     break;
 
                 case 3:
-
                     for (ControleDeEstoque produtos : list){
                         System.out.println(produtos);
                     }
@@ -93,6 +92,5 @@ public class Loja {
                     System.out.println("Essa opção não existe.");
             }
         }
-
     }
 }
