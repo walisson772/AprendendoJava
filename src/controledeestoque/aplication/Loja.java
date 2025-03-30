@@ -70,10 +70,10 @@ public class Loja {
                     else {
                         System.out.print("Digite a quantidade de unidade para remoção: ");
                         int qtd = sc.nextInt();
-                        Double menosValorInEstoque = result.getPrecoTotal() - qtd * estoc.getValorUnidade();
+                        double menosValorInEstoque = result.getPrecoTotal() - qtd * estoc.getValorUnidade();
                         result.setPrecoTotal(menosValorInEstoque);
                         int unidade = result.getQuantidade() - qtd;
-                        if (unidade < 0){
+                        if (unidade <= 0){
                             System.out.println("Todos as unidade foram removida");
                             list.remove(result);
                         }
