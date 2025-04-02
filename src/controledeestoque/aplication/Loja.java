@@ -60,6 +60,8 @@ public class Loja {
 
                     System.out.print("Digite codigo do produto: ");
                     int id = sc.nextInt();
+
+                    // Verifica se o id(codigo) ja existe no estoque, se ele ja existir ele vai para o else;
                     ControleDeEstoque result = list.stream().filter(x -> x.getCodigo() == id).findFirst().orElse(null);
 
                     if (result == null){
