@@ -1,6 +1,6 @@
 package calculator;
 
-public class Calculator {
+public class    Calculator {
     public double num1;
     public double num2;
     public int escolha;
