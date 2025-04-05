@@ -1,4 +1,4 @@
-package sytemloja.entities.enums;
+package sytemloja.entitie.enums;
 
 public enum OrderStatus {
 
