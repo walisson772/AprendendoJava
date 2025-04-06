@@ -23,4 +23,9 @@ public class SavingAccount extends Account{
     public void updateBalance(){
         balance += balance * interestRate;
     }
+
+    @Override
+    public void saque(double quantia) {
+        balance -= quantia;
+    }
 }
