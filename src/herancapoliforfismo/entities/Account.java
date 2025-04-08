@@ -36,7 +36,7 @@ public class Account {
     }
 
     public void saque(double quantia) {
-        balance -= quantia;
+        balance -= quantia + 5;
     }
 
     public void deposit(double quantia){
