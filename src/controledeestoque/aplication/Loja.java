@@ -1,6 +1,7 @@
 package controledeestoque.aplication;
 
 import controledeestoque.util.ControleDeEstoque;
+import controledeestoque.util.ControleDeProdutos;
 
 
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ import java.util.Scanner;
 public class Loja {
     public static void main(String[] args){
         Locale.setDefault(Locale.US);
-        List<ControleDeEstoque> list = new ArrayList<>();
-        ControleDeEstoque estoc = new ControleDeEstoque();
+        List<ControleDeProdutos> list = new ArrayList<>();
+        ControleDeProdutos estoc = new ControleDeProdutos();
         Scanner sc = new Scanner(System.in);
 
 
@@ -26,7 +27,7 @@ public class Loja {
                     int codigo = sc.nextInt();
 
                     //Verifica se o codigo ja existe, se o codigo ja existir ele vai para o else.
-                    ControleDeEstoque codigoFalse = list.stream().filter(x -> x.getCodigo() == codigo).findFirst().orElse(null);
+                    ControleDeProdutos codigoFalse = list.stream().filter(x -> x.getCodigo() == codigo).findFirst().orElse(null);
                     if (codigoFalse == null){
                         System.out.print("Digite a quantidade de unidades: ");
                         int quantidade = sc.nextInt();
@@ -38,7 +39,7 @@ public class Loja {
                         estoc.setValorUnidade(preco);
                         System.out.println("Produto: "+produto+" foi adcionado com sucesso.");
                         Double valorTotal = quantidade * preco;
-                        list.add(new ControleDeEstoque(codigo, quantidade, produto, valorTotal));
+                        list.add(new ControleDeProdutos(codigo, quantidade, produto, valorTotal, preco));
                     }
 
                     else{
@@ -47,9 +48,14 @@ public class Loja {
                     break;
 
                 case 2:
-                    System.out.println("Produtos no estoque:");
-                    for (ControleDeEstoque produtos : list){
-                        System.out.println(produtos);
+                    if (list.isEmpty()){
+                        System.out.println("Nenhum produto no estoque.");
+                    }
+                    else{
+                        System.out.println("Produtos no estoque:");
+                        for (ControleDeProdutos produtos : list){
+                            System.out.println(produtos);
+                        }
                     }
                     break;
 
@@ -62,7 +68,7 @@ public class Loja {
                     int id = sc.nextInt();
 
                     // Verifica se o id(codigo) ja existe no estoque, se ele ja existir ele vai para o else;
-                    ControleDeEstoque result = list.stream().filter(x -> x.getCodigo() == id).findFirst().orElse(null);
+                    ControleDeProdutos result = list.stream().filter(x -> x.getCodigo() == id).findFirst().orElse(null);
 
                     if (result == null){
                         System.out.println("Esse protudo não tem no estoque.");
@@ -75,7 +81,7 @@ public class Loja {
                         result.setPrecoTotal(menosValorInEstoque);
                         int unidade = result.getQuantidade() - qtd;
                         if (unidade <= 0){
-                            System.out.println("Todos as unidade foram removida");
+                            System.out.println("Todas as unidade foram removidas");
                             list.remove(result);
                         }
 
@@ -84,9 +90,32 @@ public class Loja {
                             result.setQuantidade(unidade);
                         }
                     }
-
                     break;
+
                 case 4:
+                    if (list.isEmpty()){
+                        System.out.println("Nenhum produto no estoque.");
+                    }
+                    else{
+                        for (ControleDeEstoque produtos : list){
+                            System.out.println(produtos);
+                        }
+                        System.out.print("Digite o codigo do produto para novas atualizações: ");
+                        int addUnidades = sc.nextInt();
+                        ControleDeProdutos add = list.stream().filter(x -> x.getCodigo() == addUnidades).findFirst().orElse(null);
+                        if (add == null){
+                            System.out.println("Codigo invalido.");
+                        }else{
+                            System.out.print("Quantas unidades seram adicionadas: ");
+                            int newUnidades = sc.nextInt();
+                            add.novasUnidades(newUnidades);
+                            System.out.println("Produto atualizado: ");
+                            System.out.println(add);
+                        }
+                    }
+                    break;
+
+                case 5:
                     sc.close();
                     break;
 

@@ -10,11 +10,12 @@ public class ControleDeEstoque {
     public ControleDeEstoque(){}
 
 
-    public ControleDeEstoque(Integer codigo, Integer quantidade, String nomeProduto, Double precoTotal){
+    public ControleDeEstoque(Integer codigo, Integer quantidade, String nomeProduto, Double precoTotal, Double valorUnidade){
         this.codigo = codigo;
         this.quantidade = quantidade;
         this.nomeProduto = nomeProduto;
         this.precoTotal = precoTotal;
+        this.valorUnidade = valorUnidade;
     }
 
     public Integer getCodigo(){
@@ -57,12 +58,14 @@ public class ControleDeEstoque {
         this.valorUnidade = valorUnidade;
     }
 
+
     public void opcoes(){
         System.out.println("\n========= Gerenciador de Estoque =========");
         System.out.println("1 - Adicionar uma Item");
         System.out.println("2 - Listar Itens");
         System.out.println("3 - Remover uma quantidade de itens");
-        System.out.println("4 - Sair");
+        System.out.println("4 - Adicionar mais unidades a um produto do estoque");
+        System.out.println("5 - Sair");
         System.out.println("==========================================");
     }
 
