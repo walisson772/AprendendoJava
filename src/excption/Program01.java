@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Program01 {
     public static void main(String[] args){
 
+
+    }
+
+    public static void method2(){
         Scanner sc = new Scanner(System.in);
 
         try {
@@ -20,6 +24,6 @@ public class Program01 {
             System.out.println("Input error");
         }
         System.out.println("Fim do programa");
-            sc.close();
+        sc.close();
     }
 }
