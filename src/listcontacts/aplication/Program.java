@@ -36,8 +36,13 @@ public class Program {
                     break;
 
                 case 2:
-                    for (GerentContacts contatc : list){
-                        System.out.println(contatc);
+                    if (list.isEmpty()){
+                        System.out.println("Você ainda não cadastrou nenhum contato");
+                    }
+                    else{
+                        for (GerentContacts contatc : list){
+                            System.out.println(contatc);
+                        }
                     }
                     break;
 
@@ -53,6 +58,7 @@ public class Program {
                     break;
 
                 case 4:
+                    gerent.listarContatos(list);
                     System.out.print("Digite um id para excluir o numero de telefone: ");
                     int idRemove = sc.nextInt();
                     list.removeIf(x -> x.getId() == idRemove);

@@ -1,5 +1,7 @@
 package listcontacts.entities;
 
+import java.util.List;
+
 public class GerentContacts {
 
     private Integer id;
@@ -40,10 +42,16 @@ public class GerentContacts {
         System.out.println("\n========= Gerenciador de Tarefas =========");
         System.out.println("1 - Adicionar um novo contato");
         System.out.println("2 - Listar todos os contatos");
-        System.out.println("3 - Buscar um contato pelo nome");
-        System.out.println("4 - Remover um contato pelo nome");
+        System.out.println("3 - Buscar um contato pelo id");
+        System.out.println("4 - Remover um contato pelo id");
         System.out.println("5 - Sair");
         System.out.println("==========================================");
+    }
+
+    public void listarContatos(List list){
+        for (Object contacts : list){
+            System.out.println(contacts);
+        }
     }
 
     public String toString() {
