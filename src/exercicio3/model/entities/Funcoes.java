@@ -71,7 +71,12 @@ public class Funcoes {
             return "Resultado: "+ subtrair();
         }
         else if (escolha == 3){
-            return "Resultado: "+ dividir();
+            if (num2 == 0){
+                throw new ErrorException("Error: Impossivel dividir um numero por zero.");
+            }
+            else {
+                return "Resultado: "+dividir();
+            }
         }
         else if (escolha == 4) {
             return  "Resultado: "+multiplicar();

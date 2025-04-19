@@ -28,8 +28,8 @@ public class Program {
                 }
                 System.out.println(funcoes2.verificarOperacao());
             }
-            catch (ArithmeticException | ErrorException e){
-                System.out.println("Error: " + e.getMessage());
+            catch (ErrorException e){
+                System.out.println(e.getMessage());
             }
         }
 
