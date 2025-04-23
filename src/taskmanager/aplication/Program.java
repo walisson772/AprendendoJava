@@ -27,16 +27,18 @@ public class Program {
                     list.add(new Tasks(id, tarefa));
                     id += 1;
                     break;
+
                 case 2:
                     System.out.println("-----------------------------");
                     System.out.println("Tarefas Pendentes:");
-                    listTarefas(list);
+                    admin.listTarefas(list);
                     System.out.println("-----------------------------");
                     break;
+
                 case 3:
                     System.out.println("-----------------------------");
                     System.out.println("Tarefas Pendentes:");
-                    listTarefas(list);
+                    admin.listTarefas(list);
                     System.out.print("Digite o id da tarefa concluida: ");
                     Integer task = sc.nextInt();
                     Tasks result = list.stream().filter(x -> x.getId() == task).findFirst().orElse(null);
@@ -50,6 +52,7 @@ public class Program {
                         System.out.println("-----------------------------");
                     }
                     break;
+
                 case 4:
                     sc.close();
                     break;
@@ -57,12 +60,6 @@ public class Program {
                 default:
                     System.out.println("Essa opção não existe");
             }
-        }
-    }
-
-    public static void listTarefas(List list){
-        for (Object tarefa : list){
-            System.out.println(tarefa);
         }
     }
 }
