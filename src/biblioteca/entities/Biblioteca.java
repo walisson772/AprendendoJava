@@ -58,10 +58,9 @@ public class Biblioteca {
     public void op(){
         System.out.println("=====================================================");
         System.out.println("1 - Cadastrar livros");
-        System.out.println("2 - Listar livros disponíveis");
-        System.out.println("3 - Emprestar um livro");
-        System.out.println("4 - Devolver um livro");
-        System.out.println("5 - Sair");
+        System.out.println("2 - Emprestar um livro");
+        System.out.println("3 - Devolver um livro");
+        System.out.println("4 - Sair");
         System.out.println("=====================================================");
         System.out.print("O que você deseja? ");
 

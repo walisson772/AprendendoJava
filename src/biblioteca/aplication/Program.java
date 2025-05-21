@@ -38,32 +38,37 @@ public class Program {
                     System.out.println("Livro cadastrado com sucesso.");
                 }
             }
-
             else if (escolha == 2){
-                Biblioteca verificarStatus = livros.stream().filter(x -> x.getDisponivel() == true).findFirst().orElse(null);
-                if (verificarStatus != null){
-                    verificarStatus.listarLivros(livros);
-                }
-            }
-
-            else if (escolha == 3){
-                Biblioteca verificarStatus = livros.stream().filter(x -> x.getDisponivel() == true).findFirst().orElse(null);
-                if (verificarStatus == null){
-                    System.out.println("");
-                }
-                verificarStatus.listarLivros(livros);
+                biblioteca.listarLivros(livros);
                 System.out.print("Digite o id do livro que você deseja: ");
                 int id = sc.nextInt();
                 Biblioteca verificandoId = livros.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
                 if (verificandoId == null){
                     System.out.println("Id invalido");
-                }
-                else {
-                    livros.remove(verificandoId);
+                }else {
+                    if (verificandoId.getDisponivel() == true) {
+                        System.out.println("Livro reservado com sucesso");
+                        verificandoId.setDisponivel(false);
+                    }else {
+                        System.out.println("Esse livro ja esta reservado");
+                    }
                 }
             }
 
-            else if (escolha == 5) {
+            else if (escolha == 3){
+                biblioteca.listarLivros(livros);
+                System.out.print("Digite o id do livro que você deseja devolver: ");
+                int id = sc.nextInt();
+                Biblioteca verificandoId = livros.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+                if (verificandoId == null){
+                    System.out.println("Id invalido");
+                }else {
+                    verificandoId.setDisponivel(true);
+                    System.out.println("A devolução foi feita com sucesso");
+                }
+            }
+
+            else if (escolha == 4) {
                 sc.close();
                 break;
             }
